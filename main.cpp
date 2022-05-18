@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stdio.h>
-#if 1
 using namespace std;
+#if 0
 int stack[100001];
 int n , sum, tmp = 0;
 int top = -1;
@@ -23,4 +23,30 @@ int main() {
     cout << sum;
     return 0;
 }
+#endif
+
+#if 1
+int front =-1 ;
+int rear = -1;
+int n, tmp = 0;
+int queue[500000];
+
+void initqueue(int n){
+    for(int i = 1; i <= n; i++){
+        queue[++rear] = i;
+    }
+}
+int main(void){
+
+    cin >> n;
+    initqueue(n);
+    while(front + 1 != rear){
+        front++;
+        tmp = queue[++front];
+        queue[++rear] = tmp;
+    }
+    cout << queue[rear];
+    return 0;
+}
+
 #endif

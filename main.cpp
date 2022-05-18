@@ -11,9 +11,11 @@ int main() {
     for(int i = 0; i < n; i++){
         scanf("%d",&tmp);
         if(!tmp){
+            //pop
             top--;
         }
         else{
+            //push
             stack[++top] = tmp;
         }
     }
@@ -29,7 +31,7 @@ int main() {
 int front =-1 ;
 int rear = -1;
 int n, tmp = 0;
-int queue[500000];
+int queue[1000000];
 
 void initqueue(int n){
     for(int i = 1; i <= n; i++){

@@ -27,7 +27,7 @@ int main() {
 }
 #endif
 
-#if 1
+#if 0
 int front =-1 ;
 int rear = -1;
 int n, tmp = 0;
@@ -51,4 +51,31 @@ int main(void){
     return 0;
 }
 
+#endif
+
+#if 1
+//9012
+int n , cnt, j, chk;
+char stack[51] = {0};
+int main(void){
+    cin >> n;
+    for(int i = 0; i < n; i++){
+        scanf("%s",stack);
+        j = 0;
+        cnt = 0;
+        while(stack[j] != 0){
+            if(stack[j] == '(') {
+                cnt++;
+            }
+            if(stack[j] == ')'){
+                cnt--;
+            }
+            if(cnt < 0 ) break;
+            //printf("%d :  cnt\n ", cnt);
+            j++;
+        }
+        if(cnt == 0) cout << "YES" << endl;
+        else cout << "NO" << endl;
+    }
+}
 #endif

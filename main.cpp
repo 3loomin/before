@@ -53,7 +53,7 @@ int main(void){
 
 #endif
 
-#if 1
+#if 0
 //9012
 int n , cnt, j, chk;
 char stack[51] = {0};
@@ -77,5 +77,34 @@ int main(void){
         if(cnt == 0) cout << "YES" << endl;
         else cout << "NO" << endl;
     }
+}
+#endif
+
+//
+// Created by 창민 on 2022/05/21.
+//
+#if 1
+//2605
+#include <iostream>
+
+using namespace std;
+int arr[101];
+int cur, n, tmp;
+void back(int arr[], int idx){
+    for(int i = n ; i >= idx; i--){
+        arr[i + 1] = arr[i];
+    }
+}
+int main(void){
+    cin >> n;
+    for(int i = 1; i <= n; i++){
+        cin >> tmp;
+        back(arr,cur - tmp);
+        arr[(cur++) - tmp] = i;
+    }
+    for(int i = 0; i < n; i++){
+        cout << arr[i] << ' ';
+    }
+    return 0;
 }
 #endif
